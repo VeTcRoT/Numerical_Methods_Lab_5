@@ -15,8 +15,8 @@ var lagrangeInterpolation = new LagrangeInterpolation(x, y, x0);
 Console.WriteLine("\n" + new string('-', 30) + "Task 2" + new string('-', 30));
 Console.WriteLine("\nLagrange Interpolation: " + lagrangeInterpolation.GetResult());
 
-var linearRegression = new LinearRegression(x, y);
-double[] linearRegressionResult = linearRegression.GetResult(); 
+var empiricalFormula = new EmpiricalFormula(x, y);
+double[] empiricalFormulaResult = empiricalFormula.GetResult(); 
 
 Console.WriteLine("\n" + new string('-', 30) + "Task 3" + new string('-', 30));
-Console.WriteLine("\nLinear Regression: y = {0}x + {1}", linearRegressionResult[0], linearRegressionResult[1]);
+Console.WriteLine("\nLinear Regression: y = {0}x + {1}", empiricalFormulaResult[0], empiricalFormulaResult[1]);

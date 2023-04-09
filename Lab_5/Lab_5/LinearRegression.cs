@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Lab_5
 {
-    internal class LinearRegression
+    internal class EmpiricalFormula
     {
         public double[] XCoordinates { get; set; }
         public double[] YCoordinates { get; set; }
-        public LinearRegression(double[] xCoordinates, double[] yCoordinates)
+        public EmpiricalFormula(double[] xCoordinates, double[] yCoordinates)
         {
             XCoordinates = xCoordinates;
             YCoordinates = yCoordinates;
