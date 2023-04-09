@@ -1,33 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab_5
+﻿namespace Lab_5
 {
-    internal class EmpiricalFormula
+    internal class LinearRegression
     {
         public double[] XCoordinates { get; set; }
         public double[] YCoordinates { get; set; }
-        public EmpiricalFormula(double[] xCoordinates, double[] yCoordinates)
+        public int N { get => XCoordinates.Length; }
+        public LinearRegression(double[] xCoordinates, double[] yCoordinates)
         {
             XCoordinates = xCoordinates;
             YCoordinates = yCoordinates;
         }
         public double[] GetResult()
         {
-            double sumX = XCoordinates.Sum();
-            double sumY = YCoordinates.Sum();
-            double sumXY = XCoordinates.Zip(YCoordinates, (x, y) => x * y).Sum();
-            double sumX2 = XCoordinates.Select(x => x * x).Sum();
-            double n = XCoordinates.Length;
+            double xMean = XCoordinates.Average();
+            double yMean = YCoordinates.Average();
 
-            double a = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
-            double b = (sumY - a * sumX) / n;
+            double b = 0, a = 0;
 
-            return new double[2] { a, b };
+            for (int i = 0; i < N; i++)
+            {
+                b += (XCoordinates[i] - xMean) * (YCoordinates[i] - yMean);
+                a += Math.Pow(XCoordinates[i] - xMean, 2);
+            }
+
+            b /= a;
+
+            a = yMean - b * xMean;
+
+            return new double[] { a, b };
         }
     }
 }
