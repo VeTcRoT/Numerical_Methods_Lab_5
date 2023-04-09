@@ -15,17 +15,17 @@
             double xMean = XCoordinates.Average();
             double yMean = YCoordinates.Average();
 
-            double b = 0, a = 0;
+            double a = 0, b = 0;
 
             for (int i = 0; i < N; i++)
             {
-                b += (XCoordinates[i] - xMean) * (YCoordinates[i] - yMean);
-                a += Math.Pow(XCoordinates[i] - xMean, 2);
+                a += (XCoordinates[i] - xMean) * (YCoordinates[i] - yMean);
+                b += Math.Pow(XCoordinates[i] - xMean, 2);
             }
 
-            b /= a;
+            a /= b;
 
-            a = yMean - b * xMean;
+            b = yMean - a * xMean;
 
             return new double[] { a, b };
         }

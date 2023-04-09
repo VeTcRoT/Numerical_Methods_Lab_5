@@ -25,7 +25,7 @@ var linearRegression = new LinearRegression(x, y);
 double[] linearRegressionResult = linearRegression.GetResult();
 
 Console.WriteLine("\n" + new string('-', 30) + "Task 4" + new string('-', 30));
-Console.WriteLine("\nLinear Regression: y = {0}x + {1}", linearRegressionResult[1], linearRegressionResult[0]);
+Console.WriteLine("\nLinear Regression: y = {0}x + {1}", linearRegressionResult[0], linearRegressionResult[1]);
 
 var polynomialRegression = new PolynomialRegression(x, y, 2);
 double[] polynomialRegressionResult = polynomialRegression.GetResult();
