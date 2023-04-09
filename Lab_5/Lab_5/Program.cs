@@ -8,4 +8,9 @@ double x0 = 1.75;
 var interpolationPolynomial = new InterpolationPolynomial(x, y, x0);
 
 Console.WriteLine(new string('-', 30) + "Task 1" + new string('-', 30));
-Console.WriteLine("\ninterpolation Polynomial: " + interpolationPolynomial.GetResult());
+Console.WriteLine("\nInterpolation Polynomial: " + interpolationPolynomial.GetResult());
+
+var lagrangeInterpolation = new LagrangeInterpolation(x, y, x0);
+
+Console.WriteLine("\n" + new string('-', 30) + "Task 2" + new string('-', 30));
+Console.WriteLine("\nLagrange Interpolation: " + lagrangeInterpolation.GetResult());
